@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(1000px); /* Adjust the blur intensity here */
+            z-index: -1; /* Ensure it stays behind other content */
+            
+        }
+        .login-container {
+            
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .login-box {
+            width: 300px;
+            padding: 40px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .login-box h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .textbox {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            background: #f1f1f1;
+            border: none;
+            outline: none;
+            color: #333;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #333;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+        .home {
+            flex: 1;
+            text-align: center;
+            align-items: center;
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            justify-content: space-between;
+
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: rgba(178, 34, 34, 0.8); /* Semi-transparent background */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        #home {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home"><b>Home</b></a></li>
+        </ul> 
+        <h1 class="Jan">JAN KEMPDORP HARVEST BUTCHERY</h1>
+        
+    </nav>
+</header>
+
+<body>
+    
+
+<div class="login-container">
+    <div class="login-box">
+        <h1>Login</h1>
+        <form action="login.php" method="POST" id="loginForm">
+            <div class="textbox">
+                <input type="text" id="username" placeholder="Username" name="username" value=""  required>
+            </div>
+            <div class="textbox">
+                <input type="password" id="password" placeholder="Password" name="password"  required>
+            </div>
+            <input type="submit" class="btn" value="Login">
+            <!-- <input type="button" class="btn" value="Register" onclick="register()">-->
+        </form>
+
+        <button class="btn" onclick="window.location.href='register.html'">Register</button>
+    </div>
+    <script src="login.js"></script>
+</div>
+<main>
+    <section id="home">
+        <h2>Fresh, Quality Meat and Livestock Delivered to Your Doorstep</h2>
+        <p>We offer a wide range of premium meats, sourced from the best farms and delivered fresh to you.</p>
+    </section>
+</main>
+</body>
+</html>

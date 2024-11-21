@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meat Market</title>
+    <link rel="stylesheet" href="original.css">
+    <style>
+        /* Center the table */
+        .inventory-table {
+            margin: 0 auto;
+            background-color: #500d05; /* Change background color of the table */
+            border-collapse: collapse;
+            width: 80%; /* Adjust width to your preference */
+        }
+
+        .inventory-table th, .inventory-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #100f0f; /* Add border for better visual appearance */
+        }
+
+        /* Style the add-item button */
+        .add-item .btn {
+            width: 150px;
+        }
+
+        .btn {
+            background-color: #b22222; /* Change button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #800000; /* Darken button on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><b>Home</b></a></li>
+            </ul> 
+            <h1 class="Jan">JAN KEMPDORP HARVEST BUTCHERY</h1>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="search-bar">
+                <button onclick="window.location.href='search.html'"><b>Search</b></button>
+            </div>
+        </nav>
+        
+        <button class="open-btn" onclick="openSidePanel()">☰ </button>
+
+        <div id="sidePanel" class="side-panel">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeSidePanel()">×</a>
+            <a href="Invoice.html">Customer Invoice</a>
+            <a href="#">Update Customer Info</a>
+            <a href="Original.html">Logout</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <table class="inventory-table" id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Description</th>
+                        <th>Unit Cost (R)</th>
+                        <th>Discount (%)</th>
+                        <th>Current Qty</th>
+                        <th>Sales Order Qty</th>
+                        <th>Purchase Order Qty</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample inventory data -->
+                    <tr>
+                        <td>001</td>
+                        <td>Beef - Ribeye</td>
+                        <td>120.00</td>
+                        <td>5</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td><button class="btn" onclick="editItem(this)">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Lamb - Chops</td>
+                        <td>90.00</td>
+                        <td>0</td>
+                        <td>80</td>
+                        <td>15</td>
+                        <td>7</td>
+                        <td><button class="btn" onclick="editItem(this)">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Chicken - Breasts</td>
+                        <td>70.00</td>
+                        <td>10</td>
+                        <td>120</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td><button class="btn" onclick="editItem(this)">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Move add-item button below the table -->
+            <div class="add-item">
+                <button class="btn" onclick="addItem()">Add Item</button>
+            </div>
+        </div> 
+    </main>
+
+    <footer class="footer">
+        <div>
+            <b><p>240 Cwaile Road</p></b>
+            <b><p>Valspan</p></b>
+            <p><b>Jan Kempdorp</b></p>
+            <p><b>8550</b></p>
+        </div>
+        <div>
+            <button style="background-color: #b22222;">
+                <b><a href="TermsAndConditions.html" style="color: white;">Terms And Conditions</a></b>
+            </button><br><br>
+            <button style="background-color: #b22222;">
+                <b><a href="RefundAndReturn.html" style="color: white;">Refund and Return Policy</a></b>
+            </button>
+        </div>
+        <div>
+            <b><p>Customer Service: 0679933997</p></b>
+            <b><p>Email: 202213141@spu.ac.za</p></b>
+            <b><p>Mon-Fri, 9 AM - 5 PM</p></b>
+            <b><p>Sat-Sun, 9 AM - 2 PM</p></b>
+        </div>
+        <div>
+            <b><p>&copy; 2024 JAN KEMPDORP HARVEST BUTCHERY. All rights reserved.</p></b>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+    <script>
+        function openSidePanel() {
+            document.getElementById("sidePanel").style.width = "250px"; // Adjust the width as needed
+        }
+    
+        function closeSidePanel() {
+            document.getElementById("sidePanel").style.width = "0"; // Hide the side panel
+        }
+    
+        function addItem() {
+            let table = document.getElementById("inventoryTable").getElementsByTagName("tbody")[0];
+            let newRow = table.insertRow();
+            newRow.innerHTML = 
+                '<td contenteditable="true">New Item Code</td>' +
+                '<td contenteditable="true">New Description</td>' +
+                '<td contenteditable="true">0.00</td>' +
+                '<td contenteditable="true">0</td>' +
+                '<td contenteditable="true">0</td>' +
+                '<td contenteditable="true">0</td>' +
+                '<td contenteditable="true">0</td>' +
+                '<td><button class="btn" onclick="editItem(this)">Edit</button></td>';
+        }
+
+        // Function to edit an item
+        function editItem(button) {
+            let row = button.parentNode.parentNode;
+            for (let i = 0; i < row.cells.length - 1; i++) {
+                let cell = row.cells[i];
+                cell.contentEditable = cell.contentEditable === "true" ? "false" : "true";
+                if (cell.contentEditable === "true") {
+                    cell.focus();
+                }
+            }
+        }
+
+        // Function to search for an item
+        function searchItem() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let table = document.getElementById("inventoryTable");
+            let tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName("td");
+                let found = false;
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j].textContent.toLowerCase().includes(input)) {
+                        found = true;
+                        break;
+                    }
+                }
+                tr[i].style.display = found ? "" : "none";
+            }
+        }
+    </script>
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+

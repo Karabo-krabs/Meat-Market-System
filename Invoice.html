@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - JAN KEMPDORP HARVEST BUTCHERY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .invoice-container {
+            width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .invoice-header img {
+            width: 100px;
+        }
+        .invoice-header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .invoice-details {
+            margin-top: 20px;
+        }
+        .invoice-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .invoice-details table th, .invoice-details table td {
+            padding: 10px;
+            border: 1px solid #0c0b0b;
+            text-align: left;
+        }
+        .invoice-details table th {
+            background-color: #b22222;
+        }
+        .totals-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .totals-container table {
+            width: 300px;
+            border-collapse: collapse;
+        }
+        .totals-container table th, .totals-container table td {
+            padding: 10px;
+            border: 1px solid #161616;
+            text-align: right;
+        }
+        .totals-container table th {
+            background-color: #f2f2f2;
+        }
+        .invoice-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #555;
+        }
+        .text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-container">
+        <!-- Invoice Header -->
+        <div class="invoice-header">
+            <div>
+                <h1>JAN KEMPDORP HARVEST BUTCHERY</h1>
+                <p>Address: 240 Cwaile Road,Valspan,Jan Kempdorp,Northern Cape ,8550</p>
+                <p>Phone: +27 67 993 3997 | Email: 202213141@spu.ac.za</p>
+            </div>
+            <div>
+               
+               
+            </div>
+        </div>
+
+        <!-- Invoice Information -->
+        <div class="invoice-details">
+            <h2>Invoice</h2>
+            <p><strong>Invoice No:</strong> INV00123</p>
+            <p><strong>Date:</strong> 2024-09-20</p>
+            <p><strong>Due Date:</strong> 2024-09-30</p>
+            <p><strong>Customer Name:</strong> John Doe</p>
+            <p><strong>Customer Address:</strong> 456 Green Street, Jan Kempdorp</p>
+        </div>
+
+        <!-- Itemized Product Table -->
+        <div class="invoice-details">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Unit Price (R)</th>
+                        <th>Quantity (Kg)</th>
+                        <th>Total (R)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Beef - Ribeye</td>
+                        <td class="text-right">120.00</td>
+                        <td class="text-right">2.5</td>
+                        <td class="text-right">300.00</td>
+                    </tr>
+                    <tr>
+                        <td>Lamb - Chops</td>
+                        <td class="text-right">90.00</td>
+                        <td class="text-right">3</td>
+                        <td class="text-right">270.00</td>
+                    </tr>
+                    <tr>
+                        <td>Chicken - Breasts</td>
+                        <td class="text-right">70.00</td>
+                        <td class="text-right">4</td>
+                        <td class="text-right">280.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Invoice Totals -->
+        <div class="totals-container">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Subtotal:</th>
+                        <td>850.00</td>
+                    </tr>
+                    <tr>
+                        <th>VAT (15%):</th>
+                        <td>127.50</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Total:</strong></th>
+                        <td><strong>977.50</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Invoice Footer -->
+        <div class="invoice-footer">
+            <p>Thank you for shopping with us! Please make payment to the following bank account:</p>
+            <p>If you have any questions regarding this invoice, contact us at Email: 202213141@spu.ac.za or +27 67 993 3997 </p>
+        </div>
+    </div>
+
+</body>
+</html>

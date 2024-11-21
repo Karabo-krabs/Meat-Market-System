@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meat Market</title>
+    
+    <style>
+       
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+            background-color: #f5f5f5;
+            position: relative;
+            background-image: url('background.jpg');
+        }
+
+        .register-box {
+            
+            position: relative;
+            align-self: center;
+            
+            width: 300px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           justify-content: center;
+            align-items: center;
+        }
+
+        .register-box h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .textbox {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            background: #f1f1f1;
+            border: none;
+            outline: none;
+            color: #333;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-bottom: 1px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #333;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+    
+
+        .textbox {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            background: #f1f1f1;
+            border: none;
+            outline: none;
+            color: #333;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #333;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+        
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url("Background.jpg"); /* Correct relative path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white; /* Ensure text is readable */
+        }
+
+        header {
+            background-color: rgba(178, 34, 34, 0.8); /* Semi-transparent background */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            border-radius: 10px;
+        }
+
+        #home {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin: 10px 0 5px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: #b22222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #a11b1b;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .login-container {
+            
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .login-box {
+            width: 300px;
+            padding: 40px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .login-box h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .textbox {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            background: #f1f1f1;
+            border: none;
+            outline: none;
+            color: #333;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #333;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+            </ul>
+        </nav>
+        <h1>JAN KEMPDORP HARVEST BUTCHERY </h1>
+    </header>
+
+    <body>
+    <div class="register-container">
+        <div class="register-box">
+            <h1>Register</h1>
+            <form id="registerForm" action="register.php" method="POST">
+                <div class="textbox">
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" name="surname" id="surname" placeholder="Surname" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="textbox">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+            
+                <div class="textbox">
+                    <input type="tel" name="phonenumber" id = "phonenumber" placeholder="Phone Number" required>
+                </div>
+                <input type="submit" class="btn" value="Register" onclick="window.location.href='login.html'">
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+
+    <main>
+        <section id="home">
+            <h2>Fresh, Quality Meat Delivered to Your Doorstep</h2>
+            <p>We offer a wide range of premium meats, sourced from the best farms and delivered fresh to you.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JAN KEMPDORP HARVEST BUTCHERY. All rights reserved.</p>
+    </footer>
+</body>
+</html>

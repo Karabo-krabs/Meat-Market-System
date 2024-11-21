@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meat Market</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><b>Home</b></a></li>
+            </ul> 
+            <h1 class="Jan">JAN KEMPDORP HARVEST BUTCHERY</h1>
+            <div class="search-container">
+                <button>
+                    <b><a href = "{% url "home" %}" style = "color:white">Back </a></b>
+                </button>
+                <input type="text" placeholder="Search..." id="search-bar">
+                <button onclick="window.location.href='search.html'"><b>Search</b></button>
+                
+            </div>
+        </nav>
+        <button class="open-btn" onclick="openSidePanel()">☰ </button>
+
+        <div id="sidePanel" class="side-panel">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeSidePanel()">×</a>
+            <a href="cart.html">View Cart</a>
+            <a href="https://wa.me/+27604469370" target="_blank">WhatsApp</a>
+            <a href="login.html">Login/Register</a>
+            <a href="#">Update Customer Info</a>
+            
+        </div>
+        
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Fresh, Quality Meat and Livestock Delivered to Your Doorstep</h2>
+            <p>We offer a wide range of premium meats, sourced from the best farms and delivered fresh to you.</p>
+        </section>
+    </main>
+
+    <header>
+        <h1>Pork</h1>
+   
+    <div class="catalogue-container">
+        
+        <div class="product">
+            <img src="pigHead.jpg" alt="head">
+            <h2>Head</h2>
+            <p>Pig Head</p>
+            <p>R250.00</p>
+            <button onclick="addToCart('Pig head',250)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pigNeck.jpg" alt="neck">
+            <h2> Neck</h2>
+            <p>Pig neck</p>
+            <p>R150.00 p/kg</p>
+            <button onclick="addToCart('Pig Neck',150)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkArm.jpg" alt="Arm">
+            <h2> Arm </h2>
+            <p>Pig Arm</p>
+            <p>R120.00 p/kg</p>
+            <button onclick="addToCart('Pig Arm', 120)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkBellu.jpg" alt="Belly">
+            <h2> Belly </h2>
+            <p>Pig Belly</p>
+            <p>R100.00 p/kg</p>
+            <button onclick="addToCart('Pig Belly',100)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkHam.jpg" alt="Ham">
+            <h2> Ham </h2>
+            <p>Pig Ham</p>
+            <p>R90.00 p/kg</p>
+            <button onclick="addToCart('Pig Ham', 90)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkJowl.jpg" alt="Jowl">
+            <h2> Jowl </h2>
+            <p>Pig Jowl</p>
+            <p>R100.00 p/kg</p>
+            <button onclick="addToCart('Pig Jowl', 100)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatRibs.jpg" alt="Ribs">
+            <h2> Ribs </h2>
+            <p>Sweet Smoked Pork Ribs</p>
+            <p>R150.00 p/kg</p>
+            <button onclick="addToCart('Pig Ribs',150)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkSirloin.jpg" alt="Sirloin">
+            <h2> Sirloin </h2>
+            <p>Pig Sirloin</p>
+            <p>R140.00 p/kg</p>
+            <button onclick="addToCart('Pig Sirloin',140)">Add to Cart</button>
+        </div>
+        
+        <!-- Add more products as needed -->
+    </div>
+
+
+    <script src="home.js"></script>
+
+    <footer class="footer" >
+        <div>
+            <b><p>240 Cwaile Road</p></b>
+            <b><p>Valspan</p></b>
+            <p><b>Jan Kempdorp</b></p>
+            <p><b>8550</b></p>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <button style="background-color: #b22222;">
+                <b><a href="TermsAndConditions.html" style="color: white;">Terms And Conditions</a></b>
+            </button><br><br>
+            <button style="background-color: #b22222;">
+                <b><a href="RefundAndReturn.html" style="color: white;">Refund and Return Policy</a></b>
+            </button>
+        </div>
+        
+        <div>
+
+            <b><p>Customer Service: 0679933997</p></b>
+            <b><p>Email: 202213141@spu.ac.za</p></b>
+            <b><p>Mon-Fri, 9 AM - 5 PM</p></b>
+            <b><p>Sat-Sun, 9 AM - 2 PM</p></b>
+        </div>
+
+        
+    </footer>
+    <footer style="background-color: #333;">
+        <div>
+            <b><p>&copy; 2024 JAN KEMPDORP HARVEST BUTCHERY. All rights reserved.</p></b>
+        </div>
+        
+    </footer>
+</body>
+</html>
+
+
+
+<!--<div class="product" data-id="1">
+            <img src="product1.jpg" alt="Namane">
+            <h2>Namane</h2>
+            <p>Description of Product 1</p>
+            
+            <p id="priceProd" class="namanePrice">$15.00 </p>
+        
+            <button onclick="addToCart('Namane',15)">Add to Cart</button>
+        </div>
+        <div class="product" data-id="2">
+            <img src="putsana.jpg" alt="Product 2">
+            <h2>Product 2</h2>
+            <p>Description of Product 2</p>
+            <p id="price">$15.00</p>
+            <button onclick="addToCart('Product 2',15)">Add to Cart</button>
+        </div>
+        <div class="product" data-id="3">
+            <img src="pig.jpg" alt="Pig">
+            <h2>Pig</h2>
+            <p>Description of Product 1</p>
+            <p id="">$10.00</p>
+            <button onclick="addToCart('Pig')">Add to Cart</button>
+        </div>
+        <div class="product" data-id="3">
+            <img src="sheep.jpg" alt="sheep">
+            <h2>Livestock</h2>
+            <p>Sheep</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('sheep')">Add to Cart</button>
+        </div>
+        <div class="product" data-id="4">
+            <img src="goat2.jpg" alt="Goat">
+            <h2>Goat</h2>
+            <p>Description of Product 1</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Goat')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="5">
+            <img src="chicken.jpg" alt="Chicken">
+            <h2>Chicken</h2>
+            <p>Description of Product 1</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Chicken')">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="rooster.jpg" alt="Rooster">
+            <h2>Rooster</h2>
+            <p>Description of Product 1</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Product 1')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="hen.jpg" alt="Hen">
+            <h2>Hen</h2>
+            <p>Description of Product 1</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Hen')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chic.jpg" alt="Chic">
+            <h2>Chic</h2>
+            <p>Description of Product 1</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Chic')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="bull.jpg" alt="Bull">
+            <h2>Bull</h2>
+            <p>Description of Product 1</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Bull')">Add to Cart</button>
+        </div>
+        <div class="product" data-id="1">
+            <img src="cowBrisket.jpg" alt="Brisket">
+            <h2>Braai brisket</h2>
+            <p>Cow Brisket</p>
+            <div id="BrisketPrice" class="BrisketPrice"></div>
+            <div>
+                <label for="brisketPrice" id="brisketPrice">R150.00</label>
+            </div>
+            <div class="weights">
+                <button onclick="showPriceBrisket('1KG')">1KG</button>
+                <button onclick="showPriceBrisket('250g')">250g</button>
+                <button onclick="showPriceBrisket('500g')">500g</button>
+            </div><br>
+            <button onclick="addToCart('Brisket')">Add to Cart</button>
+        </div>
+        <div class="product"data-id="2">
+            <img src="cowchuck.jpg" alt="chuck">
+            <h2>Chuck</h2>
+            <p>Cow chuck</p>
+            <div id="chuckPrice" class="chuckPrice"></div>
+            <div>
+                <label for="ChuckPrice" id="ChuckPrice">R170.00</label>
+            </div>
+            <div class="weights">
+                <button onclick="showPriceChuck('1KG')">1KG</button>
+                <button onclick="showPriceChuck('250g')">250g</button>
+                <button onclick="showPriceChuck('500g')">500g</button>
+            </div><br>
+            <button onclick="addToCart('Chuck')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="cowfeet.jpg" alt="feet">
+            <h2>Quality cow feet</h2>
+            <p>Cow feet</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('feet')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="cowhead.jpg" alt="Head">
+            <h2>Best cow head</h2>
+            <p>Cow head</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Head')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="cowRoundcut.jpg" alt="round cut">
+            <h2>Round cut</h2>
+            <p>Cow round cut</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('round cut')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="cowrump.jpg" alt="rump">
+            <h2>Rump</h2>
+            <p>Cow Rump</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('rump')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="cowShank.jpg" alt="Shank">
+            <h2>Shank</h2>
+            <p>Cow Shank</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Shank')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="Mince.jpg" alt="Bull">
+            <h2>Mince</h2>
+            <p>Beef Mince</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Mince')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatBreast.jpg" alt="breast">
+            <h2>Goat breast</h2>
+            <p>Goat breast rolled roast</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('breast')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatKnee.jpg" alt="knee">
+            <h2>Goat knee</h2>
+            <p>Marinated Roast Kbee Of Goat</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('knee')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatFlank.jpg" alt="flank">
+            <h2>Goat Flank</h2>
+            <p>Goat flank</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('flank')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatHock.jpg" alt="hock">
+            <h2>Goat hock</h2>
+            <p>Goat hock</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('hock')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatLeg.jpg" alt="leg">
+            <h2>Goat leg</h2>
+            <p>Goat leg</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('leg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatLoin.jpg" alt="loin">
+            <h2>Goat loin</h2>
+            <p>Goat loin</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('loin')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatneck.jpg" alt="neck">
+            <h2>Goat neck</h2>
+            <p>Goat neck</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('neck')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatRibs.jpg" alt="ribs">
+            <h2>Goat ribs</h2>
+            <p>Goat ribs</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('ribs')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatRump.jpg" alt="rump">
+            <h2>Goat rump</h2>
+            <p>Goat rump</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('rump')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatShank.jpg" alt="Shank">
+            <h2>Goat Shank</h2>
+            <p>Goat Shank</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Shank')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatShoulder.jpg" alt="shoulder">
+            <h2>Goat Shoulder</h2>
+            <p>Goat shoulder</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('shoulder')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatTail.jpg" alt="tail">
+            <h2>Goat tail</h2>
+            <p>Goat tail</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('tail')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pigHead.jpg" alt="head">
+            <h2>Pig Head</h2>
+            <p>Pig Head</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('head')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pigNeck.jpg" alt="neck">
+            <h2>Pig Neck</h2>
+            <p>Pig neck</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('neck')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkArm.jpg" alt="Arm">
+            <h2>Pig Arm </h2>
+            <p>Pig Arm</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Arm')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkBellu.jpg" alt="Belly">
+            <h2>Pig Belly </h2>
+            <p>Pig Belly</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Belly')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkHam.jpg" alt="Ham">
+            <h2>Pig Ham </h2>
+            <p>Pig Ham</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Ham')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkJowl.jpg" alt="Jowl">
+            <h2>Pig Jowl </h2>
+            <p>Pig Jowl</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Jowl')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="goatRibs.jpg" alt="Ribs">
+            <h2>Pig Ribs </h2>
+            <p>Sweet Smoked Pork Ribs</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Ribs')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="porkSirloin.jpg" alt="Sirloin">
+            <h2>Pig Sirloin </h2>
+            <p>Pig Sirloin</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Sirloin')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chickenHead.jpg" alt="Heads">
+            <h2>Chicken Head </h2>
+            <p>Chicken Head</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Heads')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chickenNecks.jpg" alt="Necks">
+            <h2>Chicken Necks </h2>
+            <p>Chicken Necks</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Necks')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chichenbreat.jpg" alt="Breasts">
+            <h2>Chicken Breasts </h2>
+            <p>Chicken Breasts</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Breasts')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chickenWings.jpg" alt="Wings">
+            <h2>Chicken Wings </h2>
+            <p>Chicken Wings</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Wings')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chickenThighs.jpg" alt="Thighs">
+            <h2>Chicken Thighs </h2>
+            <p>Chicken Thighs</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Thighs')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chickenLeg.jpg" alt="Leg">
+            <h2>Chicken Drumsticks </h2>
+            <p>Chicken Drumsticks</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Leg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chickenFeet.jpg" alt="Feet">
+            <h2>Chicken Feet </h2>
+            <p>Chicken Feet</p>
+            <p>$10.00</p>
+            <button onclick="addToCart('Feet')">Add to Cart</button>
+        </div>-->
